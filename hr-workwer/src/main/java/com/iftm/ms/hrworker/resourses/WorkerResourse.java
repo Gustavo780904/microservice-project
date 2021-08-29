@@ -20,7 +20,7 @@ public class WorkerResourse {
 	
 	@GetMapping
 	public ResponseEntity<List<Worker>> findAll(){
-		List<Worker> list = service.findAll();
-		return ResponseEntity.ok(list);
+		var list = service.findAll();
+		return ResponseEntity.ok().body(list);
 	}
 }
