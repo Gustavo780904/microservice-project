@@ -1,4 +1,4 @@
-package com.iftm.ms.hrpayroll.services;
+ package com.iftm.ms.hrpayroll.services;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -21,7 +21,7 @@ public class PaymentService {
 	public Payment getPayment(Long workerId, int days) {
 		Map<String, String> urlVariables = new HashMap<>();
 		urlVariables.put("id", "" + workerId);
-		Worker obj = restTemplate.getForObject(workerHost + "/workers/{od}", Worker.class);
+		Worker obj = restTemplate.getForObject(workerHost + "/workers/{id}", Worker.class, urlVariables);
 		return new Payment(obj.getName(), obj.getDailyIncome(), days);
 	}
 }
